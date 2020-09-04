@@ -152,7 +152,6 @@ const AddUserForm = ({
         console.log("Äpi_call_success=>", res);
         if (res) {
         setState({ message: "New User is Added successfully" });
-		cancelAction(null);
         }
       });
   };

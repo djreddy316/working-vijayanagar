@@ -101,7 +101,7 @@ export function Dashboard({
 
   return (
   <div>
-    <h1 style = {{color:'white'}}> Roster Management </h1>
+    <h1 style = {{color:'white'}}> Roaster Management </h1>
     <DashboardSection>
       <RoasterTable
           rowData={roasters.roasters}
