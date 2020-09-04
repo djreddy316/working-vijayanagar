@@ -96,7 +96,7 @@ export default function Reports() {
 </div>
 	{
 	<div style = {{width:"98%", marginTop:"-50px"}}>
-	<MaterialTable style = {{background:"#0f1322",color:"#fff"}} className={classes.table} size="small" aria-label="a dense table"
+	<MaterialTable style = {{background:"#0F1322",color:"#FFF"}} className={classes.table} size="small" aria-label="a dense table"
 	icons={tableIcons}	
 	columns={[
 	  { title: 'Yard', field: 'yard' },
