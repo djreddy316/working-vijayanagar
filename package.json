@@ -24,6 +24,7 @@
     "office-ui-fabric-react": "^7.134.0",
     "react": "^16.13.1",
     "react-beautiful-dnd": "^13.0.0",
+    "react-bootstrap-daterangepicker": "^7.0.0",
     "react-digital-clock": "^0.1.2",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.2.0",
