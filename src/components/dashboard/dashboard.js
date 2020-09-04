@@ -88,51 +88,58 @@ export function Dashboard({
 
   return (
   <div>
-  <h3 style = {{color:"white",marginLeft:"65%"}}>{time} </h3>
-<Card style = {{ marginLeft:'40%',marginTop:'20px',padding:'20px',width:'300px',background:'azure'}}>
+  <h5 style = {{color:"white",marginLeft:"65%"}}>{time} </h5>
+<Card style = {{ marginLeft:'35%',marginTop:'20px',padding:'20px',width:'450px',background:'azure'}}>
       <CardContent style = {{textAlign :'center'}}>
        
-        <Typography variant="h5" component="h2" style = {{paddingBottom : "30px"}}>
-         Yard : North Yard
+        <Typography variant="h5" component="h2" style = {{paddingBottom : "30px",color:"black"}}>
+         Yard : North Yard (NY)
+         </Typography>
+       <Typography variant="body2" component="p" style = {{fontWeight : "500",fontSize:"18px",marginBottom:"20px",color:"black"}}>
+		 Total Planned loading - Rakes [0]   Wagons [0]
         </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          Total Rakes for loading : 0
+        <Typography variant="body2" component="p" style = {{fontWeight : "500",fontSize:"18px",marginBottom:"20px",color:"black"}}>
+          <div style = {{marginLeft : "60px"}}>Total Scanned -  Rakes [0]  Wagons [0] </div>
         </Typography>
-        <Typography variant="body2" component="p">
-        Total Wagons for loading : 0
-        
-          
+		<Typography variant="body2" component="p" style = {{fontWeight : "500",fontSize:"18px",marginBottom:"20px",color:"black"}}>
+          <div style = {{marginLeft : "35px"}}> Pending for Scan - Rakes [0] Wagons [0] </div>
         </Typography>
       </CardContent>
      
     </Card>
 	
-	<Card  style = {{marginLeft:'40%', marginTop:'20px',padding:'20px',width:'300px',background:'azure'}}>
+	<Card style = {{ marginLeft:'35%',marginTop:'20px',padding:'20px',width:'450px',background:'azure'}}>
       <CardContent  style = {{textAlign :'center'}}>
        
-        <Typography variant="h5" component="h2" style = {{paddingBottom : "30px"}}>
-         Yard : CRM2
+        <Typography variant="h5" component="h2" style = {{paddingBottom : "30px",color:"black"}}>
+         Yard : Cold Rolling Mill( CRM2)
         </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-		 Total Rakes for loading : 0
+       <Typography variant="body2" component="p" style = {{fontWeight : "500",fontSize:"18px",marginBottom:"20px",color:"black"}}>
+		 Total Planned loading - Rakes [0]   Wagons [0]
         </Typography>
-        <Typography variant="body2" component="p">
-          Total Wagons for loading : 0
+        <Typography variant="body2" component="p" style = {{fontWeight : "500",fontSize:"18px",marginBottom:"20px",color:"black"}}>
+          <div style = {{marginLeft : "60px"}}>Total Scanned -  Rakes [0]  Wagons [0] </div>
+        </Typography>
+		<Typography variant="body2" component="p" style = {{fontWeight : "500",fontSize:"18px",marginBottom:"20px",color:"black"}}>
+          <div style = {{marginLeft : "35px"}}> Pending for Scan - Rakes [0] Wagons [0] </div>
         </Typography>
       </CardContent>
       
     </Card>
-	<Card  style = {{marginLeft:'40%', marginTop:'20px',padding:'20px',width:'300px',background:'azure'}}>
+	<Card style = {{ marginLeft:'35%',marginTop:'20px',padding:'20px',width:'450px',background:'azure'}}>
       <CardContent  style = {{textAlign :'center'}}>
        
-        <Typography variant="h5" component="h2" style = {{paddingBottom : "30px"}}>
-         Yard : HSM2
+        <Typography variant="h5" component="h2" style = {{paddingBottom : "30px",color:"black"}}>
+         Yard : Hot Strip Mill(HSM2)
+         </Typography>
+       <Typography variant="body2" component="p" style = {{fontWeight : "500",fontSize:"18px",marginBottom:"20px",color:"black"}}>
+		 Total Planned loading - Rakes [0]   Wagons [0]
         </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          Total Rakes for loading : 0
+        <Typography variant="body2" component="p" style = {{fontWeight : "500",fontSize:"18px",marginBottom:"20px",color:"black"}}>
+          <div style = {{marginLeft : "60px"}}>Total Scanned -  Rakes [0]  Wagons [0] </div>
         </Typography>
-        <Typography variant="body2" component="p">
-          Total Wagons for loading : 0
+		<Typography variant="body2" component="p" style = {{fontWeight : "500",fontSize:"18px",marginBottom:"20px",color:"black"}}>
+          <div style = {{marginLeft : "35px"}}> Pending for Scan - Rakes [0] Wagons [0] </div>
         </Typography>
       </CardContent>
       
