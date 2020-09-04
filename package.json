@@ -2,6 +2,7 @@
   "name": "jsw",
   "version": "0.1.0",
   "private": true,
+  "build-serve": "node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
