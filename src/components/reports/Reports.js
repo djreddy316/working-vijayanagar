@@ -120,7 +120,57 @@ export default function Reports() {
 	}}
   />
 	</div>
-
+	
+	/* <TableContainer  style = {{background:"#0f1322"}} component={Paper}>
+      <Table  style = {{background:"##0f1322"}} className={classes.table} size="small" aria-label="a dense table">
+        <TableHead style = {{backgroundColor : "#CCC"}}>
+		<TableRow>
+		<TableCell align="center" colSpan={6} style= {{border:"1px solid"}}>Actual</TableCell>
+		<TableCell align="center" colSpan={3} style= {{border:"1px solid",backgroundColor : "#AAA"}}>Planned</TableCell>
+		<TableCell align="center" style= {{border:"1px solid",backgroundColor:"#FFC200"}}>Delta</TableCell>
+		<TableCell align="center" colSpan={3} style= {{border:"1px solid",backgroundColor:"green"}}>Corrective Actions</TableCell>
+		</TableRow>
+          <TableRow>
+            <TableCell align="right" style= {{border:"1px solid"}}>Yard</TableCell>
+            <TableCell align="right" style= {{border:"1px solid"}}>Wagon Number</TableCell>
+            <TableCell align="right" style= {{border:"1px solid"}}>Batch Number</TableCell>
+            <TableCell align="right" style= {{border:"1px solid"}}>Scanned By</TableCell>
+            <TableCell align="right" style= {{border:"1px solid"}}>Date</TableCell>
+			<TableCell align = "center" style= {{border:"1px solid"}}>Image </TableCell>
+			<TableCell align = "right" style= {{border:"1px solid",backgroundColor : "#AAA"}}>SAP Rakenumber </TableCell>
+			<TableCell align = "right" style= {{border:"1px solid",backgroundColor : "#AAA"}}>SAP Wagon Number </TableCell>
+			<TableCell align = "right" style= {{border:"1px solid",backgroundColor : "#AAA"}}>SAP Batchnumber </TableCell>
+			<TableCell aling = "right" style= {{border:"1px solid",backgroundColor:"#FFC200"}}>Anamoly </TableCell>
+			<TableCell aling = "right" style= {{border:"1px solid",backgroundColor:"#FFC200"}}>Action </TableCell>
+			<TableCell aling = "right" style= {{border:"1px solid",backgroundColor:"#FFC200"}}>Action taken </TableCell>
+			<TableCell aling = "right" style= {{border:"1px solid",backgroundColor:"#FFC200"}}>Action time </TableCell>
+			
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {data.map((row,i) => (
+            <TableRow key={i}>
+              <TableCell style= {{color:"white"}} component="th" scope="row">
+                {row.yard}
+              </TableCell>
+              <TableCell  style= {{color:"white"}} align="right">{row.wagonnumber}</TableCell>
+              <TableCell style= {{color:"white"}} align="right">{row.batchnumber}</TableCell>
+              <TableCell style= {{color:"white"}}  align="right">{row.scannedby}</TableCell>
+			   <TableCell style= {{color:"white"}}  align="right">{row.date}</TableCell>
+			    <TableCell  style= {{color:"white"}} align="center">{<a href = "" >image</a>}</TableCell>
+				 <TableCell  style= {{color:"white"}} align="center">{row.rakeno}</TableCell>
+				 <TableCell style= {{color:"white"}}  align="center">{row.wagonno}</TableCell> 
+				 <TableCell style= {{color:"white"}}  align="center"></TableCell>
+				 <TableCell style= {{color:"white"}}  align="center"></TableCell>
+				  <TableCell style= {{color:"white"}}  align="center"></TableCell>
+				 <TableCell style= {{color:"white"}}  align="center"></TableCell>
+				 <TableCell style= {{color:"white"}}  align="center"></TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer> */
+	
 	}
 		
 	</div>
