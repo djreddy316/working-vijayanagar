@@ -9,7 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
-
+import { forwardRef } from 'react';
 
 export default function Reports(){
 	
