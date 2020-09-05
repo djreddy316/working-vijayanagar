@@ -14,7 +14,9 @@ import {DatePicker} from "antd";
 import MaterialTable from "material-table";
 import { AddBox, ArrowDownward, Search, Check, ChevronLeft, ChevronRight, Clear, DeleteOutline,Edit,FilterList,FirstPage,LastPage,Remove,ViewColumn,SaveAlt } from "@material-ui/icons";
 
-import DateRangePicker from 'react-bootstrap-daterangepicker';
+
+
+
 
 export default function Reports(){
 	
