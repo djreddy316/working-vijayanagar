@@ -72,9 +72,9 @@ class ExcelReader extends Component {
 
     render() {
         return (
-            <div >
-                <input style = {{color:"black",width:"15%",marginLeft:"60%",marginTop:"0px"}} type="file" className="form-control" id="file" accept={SheetJSFT} onChange={this.handleChange} />
-                <input style = {{marginLeft:"80%",marginTop:"-25px"}} type='submit' value="Submit" onClick={this.handleFile} />
+            <div style = {{marginLeft:"70%"}}>
+                <input style = {{color:"white"}}type="file" className="form-control" id="file" accept={SheetJSFT} onChange={this.handleChange} />
+                <input style = {{marginBottom : "50px"}}type='submit' value="Upload Roster" onClick={this.handleFile} />
             </div>
 
         )
