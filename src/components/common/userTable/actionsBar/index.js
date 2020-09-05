@@ -7,8 +7,8 @@ class ManageActionsBar extends Component {
   render() {
     const {
       actions = [
-        { text: "Add User", icon: PersonAddIcon, type: "add" },
-        { text: "Bulk upload users", icon: GroupAddIcon, type: "upload" }
+        { text: "Add User", icon: PersonAddIcon, type: "add" }
+       
       ],
       clickAction,
       panelType,

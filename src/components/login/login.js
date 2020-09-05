@@ -66,7 +66,7 @@ class SignIn extends Component {
         <div className="split left">
           <div className="info">
             <img src={src} alt="JSW | Salem Works" />
-            <h1 style={{color:'white'}}>SHARK</h1>
+            <h1 style={{color:'white'}}>Logistics Suite</h1>
 			<h1 style={{color:'white'}}>Outbound Loading</h1>
             <h1 style={{color:'white'}}>Tally Checker Application</h1>
           </div>
