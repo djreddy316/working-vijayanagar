@@ -73,10 +73,10 @@ class SignIn extends Component {
       .then((res) => {
         console.log("Äpi_call_success=>", res);
         if (this.state.password != res.data.password) {
-        /* this.setState({
+         this.setState({
         open: true,
         message: "Incorrect Username or Password!",
-		});*/ //Need to replace with toast
+		}); //Need to replace with toast
 		toast('Incorrect Username or Password!')
 		//this.props.history.push("/login");
         } else {
@@ -165,11 +165,9 @@ class SignIn extends Component {
               </DialogContentText>
             </DialogContent>
             <DialogActions>
-              <Button color="primary">
-                <Link className="link submit" to="/">
-                  Okay
-                </Link>
-              </Button>
+              <Button onClick={this.handleClose} color="primary" autoFocus>
+				Okay
+			</Button>
             </DialogActions>
           </Dialog>
         </div>
