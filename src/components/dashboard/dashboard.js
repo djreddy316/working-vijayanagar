@@ -88,7 +88,7 @@ export function Dashboard({
 
   return (
   <div>
-  <h5 style = {{color:"white",marginLeft:"65%"}}>{time} </h5>
+  <p style = {{color:"white",marginLeft:"65%"}}>{time} </p>
 <Card style = {{ marginLeft:'35%',marginTop:'20px',padding:'20px',width:'450px',background:'azure'}}>
       <CardContent style = {{textAlign :'center'}}>
        
