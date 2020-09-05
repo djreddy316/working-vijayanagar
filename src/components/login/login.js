@@ -11,7 +11,8 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 
 import "./login.css";
 import src from "../assets/JSW-logo.png";
-
+import { Label } from "office-ui-fabric-react";
+import {toast} from 'react-toastify'; 
 // const inputProps = {
 //   color: "white",
 // };
@@ -24,6 +25,7 @@ class SignIn extends Component {
       password: "",
       message: "",
       open: false,
+      error_message: "ccccccccc",
     };
   }
 
@@ -40,7 +42,11 @@ class SignIn extends Component {
   };
 
   signIn = () => {
-    if (this.state.username === "admin" && this.state.password === "admin") {
+    if (this.state.password == "" || this.state.username == "") {
+      console.log("Username or password should not be blank");
+      return;
+    }
+    /*if (this.state.username === "admin" && this.state.password === "admin") {
       this.setState({
         open: true,
         message: "You have successfully Logged In!",
@@ -51,7 +57,37 @@ class SignIn extends Component {
         open: true,
         message: "Incorrect Username or Password!",
       });
-    }
+    }*/
+    let userInfo = {
+      username: this.state.username,
+    };
+    fetch(
+      "https://7fidxh52z5.execute-api.ap-south-1.amazonaws.com/prod/getplatformusers ",
+      {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(userInfo),
+      }
+    )
+      .then((r) => r.json())
+      .then((res) => {
+        console.log("Äpi_call_success=>", res);
+        if (this.state.password != res.data.password) {
+        /* this.setState({
+        open: true,
+        message: "Incorrect Username or Password!",
+		});*/ //Need to replace with toast
+		toast('Incorrect Username or Password!')
+		//this.props.history.push("/login");
+        } else {
+          localStorage.setItem("role_id", res.data.role);
+          this.setState({
+            open: true,
+            message: "You have successfully Logged In!",
+          });
+          this.props.history.push("/dashboard");
+        }
+      });
   };
 
   handleClose = () => {
@@ -66,15 +102,15 @@ class SignIn extends Component {
         <div className="split left">
           <div className="info">
             <img src={src} alt="JSW | Salem Works" />
-            <h1 style={{color:'white'}}>Logistics Suite</h1>
-			<h1 style={{color:'white'}}>Outbound Loading</h1>
-            <h1 style={{color:'white'}}>Tally Checker Application</h1>
+            <h1 style={{ color: "white" }}>Logistics Suite</h1>
+            <h1 style={{ color: "white" }}>Outbound Loading</h1>
+            <h1 style={{ color: "white" }}>Tally Checker Application</h1>
           </div>
         </div>
 
         <div className="split right">
           <div className="info">
-            <h2 style = {{color:"white"}}>Login</h2>
+            <h2 style={{ color: "white" }}>Login</h2>
             <TextField
               variant="standard"
               placeholder="Userame"
@@ -95,6 +131,13 @@ class SignIn extends Component {
               type="password"
               onChange={this.setPassword}
               value={this.state.password}
+            />
+            <Label
+              className="text-field"
+              variant="standard"
+              placeholder="Password"
+              margin="normal"
+              value={this.state.error_message}
             />
 
             <div className="button">
@@ -123,7 +166,7 @@ class SignIn extends Component {
             </DialogContent>
             <DialogActions>
               <Button color="primary">
-                <Link className="link submit" to="/dashboard">
+                <Link className="link submit" to="/">
                   Okay
                 </Link>
               </Button>
