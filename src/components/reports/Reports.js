@@ -92,7 +92,7 @@ useEffect(() => {
               <TableCell style= {{color:"white"}} align="right">{row.batchnumber}</TableCell>
               <TableCell style= {{color:"white"}}  align="right">{row.scannedby}</TableCell>
 			   <TableCell style= {{color:"white"}}  align="right">{row.date}</TableCell>
-			    <TableCell  style= {{color:"white"}} align="center">{{row.url}}</TableCell>
+			    <TableCell  style= {{color:"white"}} align="center">{row.url}</TableCell>
 				 <TableCell  style= {{color:"white"}} align="center">{row.rakeno}</TableCell>
 				 <TableCell style= {{color:"white"}}  align="center">{row.wagonno}</TableCell> 
 				 <TableCell style= {{color:"white"}}  align="center"></TableCell>
