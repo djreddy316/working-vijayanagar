@@ -43,6 +43,7 @@ function Container({ fetchNotifications, fetchZones }) {
     <MainSection>
       <Header
         onMenuClick={() => setNavOpen(navOpen === "" ? "open" : "")}
+		onLogOut={() => localStorage.clear()}
         onNotificationsClick={() =>
           setNotificationsOpen(notificationsOpen === null ? "open" : null)
         }

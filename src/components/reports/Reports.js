@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from "react";
 import {makeStyles} from '@material-ui/core/styles';
-
+import { connect } from "react-redux";
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
 import { forwardRef } from 'react';
 import {DatePicker} from "antd";
 //import {Container, Row, Col} from 'reactstrap';
-
+import { Link } from "react-router-dom";
 import MaterialTable from "material-table";
 import { AddBox, ArrowDownward, Search, Check, ChevronLeft, ChevronRight, Clear, DeleteOutline,Edit,FilterList,FirstPage,LastPage,Remove,ViewColumn,SaveAlt } from "@material-ui/icons";
 
@@ -39,19 +39,31 @@ const tableIcons = {
     ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
   };
 
-export default function Reports() {
+export default function Reports({
+    history
+  }) {
 
     const url = " https://xlnlyl43dd.execute-api.ap-south-1.amazonaws.com/dev/loadscandata";
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
+		const [localvalue, setLocalvalue] = useState("");
     const useStyles = makeStyles({
         table: {
             minWidth: 650
 		}
     });
 
-    const classes = useStyles();
-
+     useEffect( () => {
+	  if(localStorage.getItem("role_id")  == undefined)
+			history.push("/login")
+	else
+      setLocalvalue(localStorage.getItem("role_id") );
+   }, []);
+	
+	const classes = useStyles();
+	
+	
+		
     useEffect(() => {
         axios.post(url, {
             "from": "2020-08-01",

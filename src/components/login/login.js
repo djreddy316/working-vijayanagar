@@ -28,6 +28,7 @@ class SignIn extends Component {
       error_message: "ccccccccc",
     };
   }
+    
 
   setUsername = (event) => {
     this.setState({
@@ -81,6 +82,7 @@ class SignIn extends Component {
 		//this.props.history.push("/login");
         } else {
           localStorage.setItem("role_id", res.data.role);
+		   localStorage.setItem("user_name", res.data.username);
           this.setState({
             open: true,
             message: "You have successfully Logged In!",

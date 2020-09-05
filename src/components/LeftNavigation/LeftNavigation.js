@@ -13,6 +13,7 @@ import ImgLink5 from "../../assets/link-5.jpg";
 import "./LeftNavigation.css";
 
 function LeftNavigation(props) {
+	
   return (
     <nav className={`nav ${props.navOpen}`}>
       <ul>

@@ -73,6 +73,7 @@ export function Dashboard({
   const [schedulingZone, setSechudulingZone] = useState({});
   const [equipments, setEquipments] = useState([]);
   const [isMapView, setIsMapView] = useState(false);
+  const [localvalue, setLocalvalue] = useState("");
 	const classes = useStyles();
   const fetchREquiredData = async () => {
     fetchZones();
@@ -83,7 +84,14 @@ export function Dashboard({
   const searchFilter = (text) => {
     setSearchFilter(text);
   };
-	
+
+useEffect( () => {
+	  if(localStorage.getItem("role_id")  == undefined)
+		history.push("/login")
+	else
+      setLocalvalue(localStorage.getItem("role_id") );
+   }, []);
+  
  
   useEffect(() => {
     fetchREquiredData();
@@ -100,8 +108,10 @@ export function Dashboard({
   };
 
   return (
+  
   <div>
-    <h1 style = {{color:'white'}}> Roster Management </h1>
+  
+  <h1 style = {{color:'white'}}> Roster Management </h1>
     <DashboardSection>
       <RoasterTable
           rowData={roasters.roasters}

@@ -9,7 +9,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import "./dashboard.css";
 import Clock from 'react-digital-clock';
-
+import { Link } from "react-router-dom";
+import Login from '../login/login'
 //import Card from "./card/Card";
 import Spinner from "../common/Spinner";
 import { loadDashboardData } from "../../redux/actions/dashboardAction";
@@ -69,6 +70,7 @@ export function Dashboard({
 }) {
 
 	const [time,setTime] = useState();
+	const [localvalue, setLocalvalue] = useState("");
   const classes = useStyles();
   const fetchREquiredData = async () => {
 
@@ -78,6 +80,13 @@ export function Dashboard({
     setSearchFilter(text);
   };
 
+  useEffect( () => {
+	  if(localStorage.getItem("role_id")  == undefined)
+		history.push("/login")
+	else
+      setLocalvalue(localStorage.getItem("role_id") );
+   }, []);
+  
   useEffect(() => {
     fetchREquiredData();
 	const interval = setInterval(() => {
@@ -88,6 +97,7 @@ export function Dashboard({
 
   return (
   <div>
+  
   <p style = {{color:"white",marginLeft:"65%"}}>{time} </p>
 <Card style = {{ marginLeft:'35%',marginTop:'20px',padding:'20px',width:'450px',background:'azure'}}>
       <CardContent style = {{textAlign :'center'}}>

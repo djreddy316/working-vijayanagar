@@ -27,7 +27,11 @@ class UserManagement extends Component {
   componentDidCatch(error, errorInfo) {
     console.log(error, errorInfo, "==>");
   }
-
+  
+componentWillMount() {
+   if(localStorage.getItem("role_id")  == undefined)
+	this.history.push("/login")
+   }
   componentDidMount() {
 	  setInterval(async () => {
     let url =
@@ -114,8 +118,7 @@ class UserManagement extends Component {
               : panelOpenType === "add"
               ? "Add user"
               : panelOpenType === "searchBy"
-              ? "Search By"
-              : "Bulk upload users"
+                       
           }
           closeAction={this.toggleUserPanel}
         >
