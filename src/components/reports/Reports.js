@@ -94,29 +94,7 @@ export default function Reports() {
 </div>
 	{
 	<div style = {{width:"98%", marginTop:"-50px"}}>
-	<MaterialTable style = {{background:"#0f1322",color:"#fff"}} className={classes.table} size="small" aria-label="a dense table"
-	icons={tableIcons}	
-	columns={[
-	  { title: 'Yard', field: 'yard' },
-	  {title: 'SAP Rakenumber',field: 'rakeno'},
-	  {title: 'SAP Wagon Number',field: 'wagonno'},
-	  { title: 'Loaded Wagon Number', field: 'wagonnumber', type: 'numeric' },
-	  {title: 'SAP Batch Number',field: 'batchno'},
-	  { title: 'Loaded Batch Number', field: 'batchnumber' },
-	  {title: 'Scanned By',field: 'scannedby'},
-	  {title: 'Image',field: 'url'}, 
-	  {title: 'Anamoly',field: 'anamoly'},
-	   {title: 'Action',field: ''},
-	   {title: 'Taken By',field: ''},
-	   {title: 'Action time',field: ''},
-	]}
-	data={data}
-	options={{
-	  search: true,
-	  searchFieldStyle : { maxWidth : "30%",marginLeft : '65%'},
-	showTitle: false,
-	}}
-  />
+	
 	</div>
 	
 	/* <TableContainer  style = {{background:"#0f1322"}} component={Paper}>
