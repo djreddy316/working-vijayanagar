@@ -16,7 +16,7 @@ import DateRangePicker from 'react-bootstrap-daterangepicker';
 import 'bootstrap/dist/css/bootstrap.css';
 // you will also need the css that comes with bootstrap-daterangepicker
 import 'bootstrap-daterangepicker/daterangepicker.css';
-//import {moment} from "moment";
+import {moment} from "moment";
 import ExportCSV from "./exportToCSV";
 
 
@@ -62,13 +62,22 @@ export default function Reports({
    }, []);
 	
 	const classes = useStyles();
-	
+  
+  function day_of_the_month(d)
+{ 
+  return (d < 10 ? '0' : '') + d;
+}
 	
 		
     useEffect(() => {
-        axios.post(url, {
-            "from": "2020-08-01",
-            "to": "2050-09-02"
+      var today = new Date();
+      let datetoday = today.getFullYear() + '-' + day_of_the_month(today.getMonth() + 1) + '-' + today.getDate();
+      //let start = moment().format('YYYY-MM-DD');
+      //let end = moment().format('YYYY-MM-DD');
+      console.log(datetoday)
+      axios.post(url, {
+            "from": datetoday,
+            "to": datetoday
         }).then(json => setData(json.data.data));
         setLoading(false);
     }, [])
