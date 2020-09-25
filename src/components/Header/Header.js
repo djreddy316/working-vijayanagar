@@ -22,10 +22,11 @@ function Header(props) {
       </div>
       <div className="right flex">
         
-        <NavLink onClick={props.onLogOut} to="/login" className="user flex">
-          <img className="pic" src={ImgUser} alt="John Doe" />
+      <div className = "user flex"> <img className="pic" src={ImgUser} alt="John Doe" /> </div>
           <div className="user-name">{localStorage.getItem('user_name')}</div>
-          <img className="arrow" src={ImgArrowDown} alt="Arrow Down" />
+          <NavLink onClick={props.onLogOut} to="/login" className="user flex">
+          <button className="button-logout"
+           > Logout </button>
         </NavLink>
       </div>
     </header>

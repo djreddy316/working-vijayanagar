@@ -130,3 +130,9 @@
 .header.open .menu .arrow {
   display: inline-block;
 }
+.button-logout {
+  background-color: #66d1ac;
+  margin-top: 0px;
+  padding: 5px 20px;
+  border-radius: 5px;
+}

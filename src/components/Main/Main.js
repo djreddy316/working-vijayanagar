@@ -48,7 +48,7 @@ function Container({ fetchNotifications, fetchZones }) {
           setNotificationsOpen(notificationsOpen === null ? "open" : null)
         }
         navOpen={navOpen}
-        notificationCount={notifications.length}
+       
       />
       <NotificationBar />
       <BodySection>
