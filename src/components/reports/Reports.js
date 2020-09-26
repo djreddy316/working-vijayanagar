@@ -124,24 +124,25 @@ export default function Reports({
 	<MaterialTable style = {{background:"#0F1322",color:"#FFF"}} className={classes.table} size="small" aria-label="a dense table"
 	icons={tableIcons}	
 	columns={[
-	  { title: 'Yard', field: 'yard' },
-	  {title: 'SAP Rakenumber',field: 'rakeno'},
-	  {title: 'SAP Wagon Number',field: 'wagonno'},
-	  { title: 'Loaded Wagon Number', field: 'wagonnumber', type: 'numeric' },
-	  {title: 'SAP Batch Number',field: 'batchno'},
-	  { title: 'Loaded Batch Number', field: 'batchnumber' },
-	  {title: 'Scanned By',field: 'scannedby'},
-	  {title: 'Image',field: 'url', render: rowData => { return rowData.url ?  <img src={'https://iiqshark-lob-s301-prod.s3.ap-south-1.amazonaws.com/'+ rowData.url} style={{height: 50}}/> : ""}}, 
-	  {title: 'Anamoly',field: 'anamoly'},
-	   {title: 'Action',field: ''},
-	   {title: 'Taken By',field: ''},
-	   {title: 'Action time',field: ''},
+	  { title: 'Yard', field: 'yard',width:'10%' },
+	  {title: 'SAP Rakenumber',field: 'rakeno',width:'15%'},
+	  {title: 'SAP Wagon',field: 'wagonno',width:'15%'},
+	  { title: 'Loaded Wagon', field: 'wagonnumber', width:'15%'},
+	  {title: 'SAP Batch no.',field: 'batchno',width:'18%'},
+	  { title: 'Loaded Batch no.', field: 'batchnumber' ,width:'15%'},
+	  {title: 'Scanned By',field: 'scannedby',width:'15%'},
+	  {title: 'Image',field: 'url',width:'15%', render: rowData => { return rowData.url ?  <img src={'https://iiqshark-lob-s301-prod.s3.ap-south-1.amazonaws.com/'+ rowData.url} style={{height: 50}}/> : ""}}, 
+	  {title: 'Anomaly',field: 'anamoly',width:'15%'},
+	   {title: 'Action',field: '',width:'15%'},
+	   {title: 'Taken By',field: '',width:'15%'},
+	   {title: 'Action time',field: '',width:'15%'},
 	]}
 	data={data}
 	options={{
 	  search: true,
 	  searchFieldStyle : { maxWidth : "30%",marginLeft : '65%'},
-	showTitle: false,
+    showTitle: false,
+    overflowY: 'inherit',
 	}}
   />
 	</div>
