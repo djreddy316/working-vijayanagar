@@ -127,7 +127,7 @@ export default function Reports({
 	  { title: 'Yard', field: 'yard' },
 	  {title: 'SAP Rakenumber',field: 'rakeno'},
 	  {title: 'SAP Wagon Number',field: 'wagonno'},
-	  { title: 'Loaded Wagon Number', field: 'wagonnumber', type: 'numeric' },
+	  { title: 'Loaded Wagon Number', field: 'wagonnumber' },
 	  {title: 'SAP Batch Number',field: 'batchno'},
 	  { title: 'Loaded Batch Number', field: 'batchnumber' },
 	  {title: 'Scanned By',field: 'scannedby'},
@@ -141,7 +141,8 @@ export default function Reports({
 	options={{
 	  search: true,
 	  searchFieldStyle : { maxWidth : "30%",marginLeft : '65%'},
-	showTitle: false,
+  showTitle: false,
+  overflowY:'inherit'
 	}}
   />
 	</div>
