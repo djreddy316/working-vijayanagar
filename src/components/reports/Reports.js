@@ -47,6 +47,7 @@ export default function Reports({
     const url = " https://7fidxh52z5.execute-api.ap-south-1.amazonaws.com/prod/getreportdata";
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [filename,setFilename] = useState("");
 		const [localvalue, setLocalvalue] = useState("");
     const useStyles = makeStyles({
         table: {
@@ -74,6 +75,8 @@ export default function Reports({
       let datetoday = today.getFullYear() + '-' + day_of_the_month(today.getMonth() + 1) + '-' + today.getDate();
       //let start = moment().format('YYYY-MM-DD');
       //let end = moment().format('YYYY-MM-DD');
+      let todaydate = today.getDate() + '-' + day_of_the_month(today.getMonth() + 1) + '-' + today.getFullYear();
+      setFilename('TallyChecker_Report_'+ todaydate)
       console.log(datetoday)
       axios.post(url, {
             "from": datetoday,
@@ -110,7 +113,7 @@ export default function Reports({
 		<h1 style = {{color:"white"}}>Loading Tally check Report </h1>
 
 <div>
-<div style = {{marginLeft:"10%",marginTop : "20px", zIndex : "999",position:"relative"}}> <ExportCSV csvData={data} fileName={'filenmae'} /> </div>
+<div style = {{marginLeft:"10%",marginTop : "20px", zIndex : "999",position:"relative"}}> <ExportCSV csvData={data} fileName={filename} /> </div>
 <div style = {{marginLeft:"40%",marginTop:"-60px", maxWidth: "300px",zIndex : "999",position:"relative"}}>
 <h5 style = {{color:"white", fontSize:"16px"}}> Chose Date range to get the Report </h5>
 <DateRangePicker onEvent={handleEvent} onCallback={handleCallback}  size="sm" style={styles}>
@@ -129,7 +132,9 @@ export default function Reports({
 	  {title: 'SAP Wagon Number',field: 'wagonno'},
 	  { title: 'Loaded Wagon Number', field: 'wagonnumber' },
 	  {title: 'SAP Batch Number',field: 'batchno'},
-	  { title: 'Loaded Batch Number', field: 'batchnumber' },
+    { title: 'Loaded Batch Number', field: 'batchnumber' },
+    { title: 'Weight', field: 'batchwt' },
+    { title: 'Size', field: 'size' },
 	  {title: 'Scanned By',field: 'scannedby'},
 	  {title: 'Image',field: 'url', render: rowData => { return rowData.url ?  <img src={'https://iiqshark-lob-s301-prod.s3.ap-south-1.amazonaws.com/'+ rowData.url} style={{height: 50}}/> : ""}}, 
 	  {title: 'Anamoly',field: 'anamoly'},
