@@ -35,7 +35,7 @@ componentWillMount() {
   componentDidMount() {
 	  setInterval(async () => {
     let url =
-      "https://xlnlyl43dd.execute-api.ap-south-1.amazonaws.com/dev/viewsecurityusers ";
+      "https://7fidxh52z5.execute-api.ap-south-1.amazonaws.com/prod/getsecurityusers";
     fetch(url, {
       method: "GET",
       headers: {
@@ -48,7 +48,7 @@ componentWillMount() {
         this.setState({ data: resp });
       });
     });
-  },1500)
+  },15000)
   }
 
   toggleUserPanel = (panelOpenType) => {

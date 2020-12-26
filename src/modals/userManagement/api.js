@@ -1,6 +1,6 @@
 const baseUrl = `http://shark-api-v2.herokuapp.com/api`;
 
-export const fetchUsersUrl = `https://8q83kl3bic.execute-api.ap-south-1.amazonaws.com/test/securityusers`;
+export const fetchUsersUrl = `https://7fidxh52z5.execute-api.ap-south-1.amazonaws.com/prod/getsecurityusers`;
 
 export const deleteUserUrl = `${baseUrl}/user/delete`;
 

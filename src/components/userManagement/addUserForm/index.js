@@ -140,7 +140,7 @@ const AddUserForm = ({
       phonenumber: values.phone_number,
     };
     fetch(
-      "https://xlnlyl43dd.execute-api.ap-south-1.amazonaws.com/dev/postsecurityusers",
+      "https://7fidxh52z5.execute-api.ap-south-1.amazonaws.com/prod/postsecurityusers",
       {
         method: "POST",
         headers: { "Content-type": "application/json" },

@@ -6,12 +6,13 @@ import { appShowPushNotification } from "../app/thunk";
 
 export const deleteUser = (user) => async (dispatch, getState) => {
   const users = selectUsers(getState());
-  const updatedUsers = users.filter((list) => list.id !== user.id);
-  dispatch(setUsers(updatedUsers));
+  //const updatedUsers = users.filter((list) => list.id !== user.id);
+  //dispatch(setUsers(updatedUsers));
   //api request
   const respone = await axios.delete(deleteUserUrl, {
     user_id: user.id,
   });
+  dispatch(fetchUsers());
   console.log("api data ==>", respone);
 };
 

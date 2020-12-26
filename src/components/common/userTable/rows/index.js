@@ -25,7 +25,7 @@ class Row extends Component {
       deleteUser,
       editUser,
     } = this.props;
-    console.log("Resp Data", rowData);
+   // console.log("Resp Data", rowData);
     return (
       <TableRowsContainer>
         {rowData.map((row) => {

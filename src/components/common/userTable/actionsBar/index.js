@@ -13,7 +13,7 @@ class ManageActionsBar extends Component {
       clickAction,
       panelType,
     } = this.props;
-    console.log("panel type ==>", panelType);
+   // console.log("panel type ==>", panelType);
     return (
       <ActionsBar>
         {actions.map(({ text, icon: Icon, type }) => (
