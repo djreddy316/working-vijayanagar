@@ -144,10 +144,13 @@ export default function Reports({
 	]}
 	data={data}
 	options={{
-	  search: true,
-	  searchFieldStyle : { maxWidth : "30%",marginLeft : '65%'},
-  showTitle: false,
-  overflowY:'inherit'
+    search: true,
+    searchFieldStyle: { maxWidth: "30%", marginLeft: "65%" },
+    pageSize: 50,
+    pageSizeOptions: [50, 100, 200, 300],
+    showTitle: false,
+    toolbar: true,
+    paging: true,
 	}}
   />
 	</div>
