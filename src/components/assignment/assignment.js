@@ -101,7 +101,7 @@ useEffect( () => {
     fetchRoasters();
   }
 
-  console.log('rrr', roasters);
+ // console.log('rrr', roasters);
 
   const invokeAction = (actionType) => {
     console.log('action type', actionType);

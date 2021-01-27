@@ -17,6 +17,7 @@ import Layout from "../layout/layout";
 import Users from "../users/users";
 import WorkerManager from "../workForce";
 import UserManager from"../userManagement";
+import YardManager from"../YardManagement";
 import SidePanel from "../common/panel";
 import Reports from "../reports/Reports"
 
@@ -75,6 +76,7 @@ function Container({ fetchNotifications, fetchZones }) {
 
 		  <Route exact path="/assignment" component={Assignment} />
           <Route exact path="/manage-user" component={UserManager} />
+          <Route exact path="/manage-yard" component={YardManager} />
 		  <Route exact path="/reports" component={Reports} />
         
           <Route

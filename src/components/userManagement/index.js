@@ -33,7 +33,7 @@ componentWillMount() {
 	this.history.push("/login")
    }
   componentDidMount() {
-	  setInterval(async () => {
+	  
     let url =
       "https://7fidxh52z5.execute-api.ap-south-1.amazonaws.com/prod/getsecurityusers";
     fetch(url, {
@@ -48,7 +48,7 @@ componentWillMount() {
         this.setState({ data: resp });
       });
     });
-  },15000)
+ 
   }
 
   toggleUserPanel = (panelOpenType) => {

@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
-import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
+//import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
+//import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
 import XLSX from 'xlsx';
 import { make_cols } from './make-columns';
 import { SheetJSFT } from './types';
 import {connect} from "react-redux";
-import {Dashboard} from "../assignment/assignment";
-import {appSelectFilteredZones, appSelectNotifications} from "../../modals/app/selectors";
-import {appFetchAllEquipments, appFetchZonesData, zoneFecthWIPdetails, zoneScheduleWIP} from "../../modals/app/thunk";
-import {appSetZonesFilter} from "../../modals/app/actions";
+//import {Dashboard} from "../assignment/assignment";
+//import {appSelectFilteredZones, appSelectNotifications} from "../../modals/app/selectors";
+//import {appFetchAllEquipments, appFetchZonesData, zoneFecthWIPdetails, zoneScheduleWIP} from "../../modals/app/thunk";
+//import {appSetZonesFilter} from "../../modals/app/actions";
 import {addRoasters, fetchRoasters} from "../../modals/roaster/roaster-service";
 import axios from 'axios';
+import { appShowPushNotification } from "../../modals/app/thunk";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class ExcelReader extends Component {
     constructor(props) {
@@ -40,6 +43,8 @@ class ExcelReader extends Component {
     };
 
     handleFile() {
+        if(this.state.file.length > 0)
+        {
         /* Boilerplate to set up FileReader */
         const reader = new FileReader();
         const rABS = !!reader.readAsBinaryString;
@@ -69,12 +74,16 @@ class ExcelReader extends Component {
             reader.readAsArrayBuffer(this.state.file);
         };
     }
+    else {
+       
+    }
+    }
 
     render() {
         return (
             <div >
                 <input style = {{color:"black",width:"20%",marginLeft:"60%",marginTop:"0px"}} type="file" className="form-control" id="file" accept={SheetJSFT} onChange={this.handleChange} />
-                <input style = {{marginLeft:"85%",marginTop:"-25px"}} type='submit' value="Submit" onClick={this.handleFile} />
+                <input style = {{marginLeft:"85%",marginTop:"-35px"}} type='submit' value="Submit" onClick={this.handleFile} />
             </div>
 
         )

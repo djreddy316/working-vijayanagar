@@ -1,4 +1,4 @@
-export const baseUrl = "http://shark-api-v2.herokuapp.com/api";
+/* export const baseUrl = "http://shark-api-v2.herokuapp.com/api";
 
 export const unitsGetAllUnitsListUrl = `${baseUrl}/unit/fetch/all`;
 
@@ -23,4 +23,4 @@ export const deleteWipUrl = `${baseUrl}/delete`;
 
 export const zoneGetWIPdetailsUrl = `${baseUrl}/wip/fetch/by-zone-id`;
 
-export const zoneUpdateWIPUrl = `${baseUrl}/wip/update`;
+export const zoneUpdateWIPUrl = `${baseUrl}/wip/update`; */

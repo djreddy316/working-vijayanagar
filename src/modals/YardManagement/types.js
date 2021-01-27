@@ -1,0 +1,2 @@
+export const SET_TOTAL_YARDS = "SET_TOTAL_YARDS";
+export const YARD_SET_NAME_FILTER = "YARD_SET_NAME_FILTER";

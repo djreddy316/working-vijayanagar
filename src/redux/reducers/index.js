@@ -7,6 +7,7 @@ import apiCallStatus from "./apiStatusReducer";
 import workForce from "../../modals/workForceManagement";
 import appData from "../../modals/app";
 import users from "../../modals/userManagement";
+import yard from "../../modals/YardManagement";
 import roasters from "../../modals/roaster/roaster-service"
 
 const rootReducer = combineReducers({
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   workForce,
   appData,
   users,
-  roasters
+  roasters,
+  yard
 });
 
 export default rootReducer;

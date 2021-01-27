@@ -4,11 +4,12 @@ import WorkIcon from "@material-ui/icons/Work";
 import AssessmentIcon from "@material-ui/icons/Assessment";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import GroupIcon from "@material-ui/icons/Group";
-import ImgLink1 from "../../assets/link-1.jpg";
+import Dashboard from "../../assets/dashboard.png";
 import ImgLink2 from "../../assets/link-2.jpg";
 import ImgLink3 from "../../assets/link-3.jpg";
 import ImgLink4 from "../../assets/link-4.jpg";
 import ImgLink5 from "../../assets/link-5.jpg";
+import Yard from "../../assets/yard.png";
 
 import "./LeftNavigation.css";
 
@@ -20,7 +21,7 @@ function LeftNavigation(props) {
         <li>
           <NavLink className="flex" to="/dashboard">
             <span className="icon flex">
-              <img src={ImgLink1} alt="Link 1" />
+              <img src={Dashboard} alt="Link 1" />
             </span>
             <span className="text">Dashboard</span>
           </NavLink>
@@ -52,6 +53,16 @@ function LeftNavigation(props) {
                 />
               </span>
               <span className="text">User management</span>
+            </NavLink>
+          </li>
+        )}
+        {localStorage.getItem("role_id") == 1 && (
+          <li>
+            <NavLink className="flex" to="/manage-yard">
+            <span className="icon flex">
+              <img src={Yard} alt="Link 1" />
+            </span>
+              <span className="text">Yard management</span>
             </NavLink>
           </li>
         )}

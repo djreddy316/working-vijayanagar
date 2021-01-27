@@ -1,6 +1,7 @@
 export default {
   dashboard: [],
   rules: [],
+  yard:[],
   zone: {},
   camera: [
     {
