@@ -136,7 +136,7 @@ export default function Reports({
     { title: 'Weight', field: 'batchwt' },
     { title: 'Size', field: 'size' },
 	  {title: 'Scanned By',field: 'scannedby'},
-	  {title: 'Image',field: 'url', render: rowData => { return rowData.url ?  <img src={'https://iiqshark-lob-s301-prod.s3.ap-south-1.amazonaws.com/'+ rowData.url} style={{height: 50}}/> : ""}}, 
+	  {title: 'Image',field: 'url', render: rowData => { return rowData.url ?  <img src={rowData.url} style={{height: 50}}/> : ""}}, 
 	  {title: 'Anamoly',field: 'anamoly'},
 	   {title: 'Action',field: ''},
 	   {title: 'Taken By',field: ''},
