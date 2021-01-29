@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import Table from "../common/userTable";
 import { ManagementSection, BannerHeading } from "./styles";
@@ -28,11 +29,7 @@ class UserManagement extends Component {
     console.log(error, errorInfo, "==>");
   }
   
-componentWillMount() {
-   if(localStorage.getItem("role_id")  == undefined)
-	this.history.push("/login")
-   }
-  componentDidMount() {
+ componentDidMount() {
 	  
     let url =
       "https://7fidxh52z5.execute-api.ap-south-1.amazonaws.com/prod/getsecurityusers";
@@ -71,6 +68,10 @@ componentWillMount() {
   };
 
   render() {
+      if(localStorage.getItem("role_id")  == undefined)
+      {
+        return <Redirect to='/login'  /> 
+      }
     const data = this.state.data;
     const { panelOpenType, activeUser } = this.state;
     const {
@@ -84,6 +85,7 @@ componentWillMount() {
     } = this.props;
 
     return (
+     
       <ManagementSection>
         <BannerHeading>User Management</BannerHeading>
         <Table

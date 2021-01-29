@@ -4,7 +4,7 @@ import Table from "../YardManagement/userTable";
 import AddYardForm from "../YardManagement/AddYardForm"
 import { ManagementSection, BannerHeading } from "./styles";
 import Panel from "../common/panel";
-
+import { Redirect } from "react-router-dom";
 import { selectYard} from "../../modals/YardManagement/selectors";
 import { YardSetNameFilter } from "../../modals/YardManagement/actions";
 import {
@@ -56,6 +56,10 @@ class YardManagement extends Component {
     };
 
     render() {
+        if(localStorage.getItem("role_id")  == undefined)
+      {
+        return <Redirect to='/login'  /> 
+      }
         const { panelOpenType, activeUser } = this.state;
         const {
             addYard,

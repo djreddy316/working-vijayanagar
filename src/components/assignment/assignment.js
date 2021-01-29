@@ -111,7 +111,7 @@ useEffect( () => {
   
   <div>
   
-  <h1 style = {{color:'white'}}> Roster Management </h1>
+  <h1 style = {{color:'white',fontSize:"36px",marginLeft:"25px"}}> Roster Management </h1>
     <DashboardSection>
       <RoasterTable
           rowData={roasters.roasters}

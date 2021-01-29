@@ -18,7 +18,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-daterangepicker/daterangepicker.css';
 import {moment} from "moment";
 import ExportCSV from "./exportToCSV";
-
+import Spinner from  "../common/Spinner";
 
 const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -104,13 +104,15 @@ export default function Reports({
 
 	const styles = { width: 260, display: "block", marginBottom: 10 };
 
- 	return !loading && <div> 
+ 	return !loading ?
+   (
+   <div> 
 	{
 		<div>
 
 
 
-		<h1 style = {{color:"white"}}>Loading Tally check Report </h1>
+		<h1 style = {{color:"white",fontSize:"36px",marginLeft:"25px"}}>Loading Tally check Report </h1>
 
 <div>
 <div style = {{marginLeft:"10%",marginTop : "20px", zIndex : "999",position:"relative"}}> <ExportCSV csvData={data} fileName={filename} /> </div>
@@ -161,6 +163,6 @@ export default function Reports({
 	</div>
       
 	}
-	</div>
+	</div> ) : <Spinner />
 
 }
