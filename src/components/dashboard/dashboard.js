@@ -44,7 +44,7 @@ const header = {
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
-    "x-api-key" : `${process.env.REACT_APP_API_KEY}`,
+    "x-api-key" : "DuuBUuTX5j6KIli3Gwvgv9D1vWn3rCap6Kd3AQo2",
   } 
 };   
 

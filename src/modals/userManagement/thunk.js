@@ -13,20 +13,20 @@ export const deleteUser = (user) => async (dispatch, getState) => {
     user_id: user.id,
   });
   dispatch(fetchUsers());
-  //console.log("api data ==>", respone);
+  console.log("api data ==>", respone);
 };
 
 export const fetchUsers = () => async (dispatch, getState) => {
   const { data: users } = await axios.get(fetchUsersUrl);
-  //console.log("Users fetched data ==>", users);
+  console.log("Users fetched data ==>", users);
   dispatch(setUsers(users ? users.data : []));
 };
 
 export const addUser = (user) => async (dispatch, getState) => {
   try {
-    //console.log("add user data before post ==>", user);
+    console.log("add user data before post ==>", user);
     dispatch(appShowPushNotification("adding user in user management"));
-    //console.log('user from thunk', JSON.stringify(user) );
+    console.log('user from thunk', JSON.stringify(user) );
     const response = await axios.post(addUserUrl, user);
     dispatch(fetchUsers());
     dispatch(appShowPushNotification("successfully added user"));
@@ -39,10 +39,10 @@ export const addUser = (user) => async (dispatch, getState) => {
 export const updateUser = (user) => async (dispatch, getState) => {
   dispatch(appShowPushNotification("updating user"));
   try {
-    //console.log("updating user ==>", user);
+    console.log("updating user ==>", user);
     const updateResponse = await axios.put(updateUserUrl, user);
     dispatch(appShowPushNotification("successfully updated user"));
-    //console.log("updated response ==>", updateResponse);
+    console.log("updated response ==>", updateResponse);
   } catch (err) {
     dispatch(appShowPushNotification("failed to update user, try again"));
     console.error(`failed to update user with ${err}`);

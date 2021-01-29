@@ -5,7 +5,6 @@ import { ManagementSection, BannerHeading } from "./styles";
 import Panel from "../common/panel";
 import AddUserForm from "./addUserForm";
 import { sampleData } from "./sampleData";
-import  { Redirect } from 'react-router-dom'
 import { selectUsers } from "../../modals/userManagement/selectors";
 import {
   fetchUsers,
@@ -28,6 +27,11 @@ class UserManagement extends Component {
   componentDidCatch(error, errorInfo) {
     console.log(error, errorInfo, "==>");
   }
+  
+componentWillMount() {
+   if(localStorage.getItem("role_id")  == undefined)
+	this.history.push("/login")
+   }
   componentDidMount() {
 	  
     let url =
@@ -48,7 +52,7 @@ class UserManagement extends Component {
   }
 
   toggleUserPanel = (panelOpenType) => {
-    //console.log("panel function inside ==>");
+    console.log("panel function inside ==>");
     this.setState({ panelOpenType });
   };
 
@@ -67,10 +71,6 @@ class UserManagement extends Component {
   };
 
   render() {
-    if(localStorage.getItem("role_id")  == undefined)
-        {
-            return <Redirect to={'/login'} />;
-        }
     const data = this.state.data;
     const { panelOpenType, activeUser } = this.state;
     const {

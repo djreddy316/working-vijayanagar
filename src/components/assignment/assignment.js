@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import { makeStyles } from '@material-ui/core/styles';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import Typography from '@material-ui/core/Typography';
 import "./assignment.css";
 import Button from '@material-ui/core/Button';
 
@@ -10,6 +15,9 @@ import Button from '@material-ui/core/Button';
 import Spinner from "../common/Spinner";
 import { loadDashboardData } from "../../redux/actions/dashboardAction";
 
+import BarMapZone from "../BarMapZone/BarMapZone";
+import BarDefaultSMS from "../BarDefaultSMS/BarDefaultSMS";
+import BarAddSearch from "../BarAddSearch/BarAddSearch";
 import {
   DashboardSection,
   ZoneOptions,
@@ -103,7 +111,7 @@ useEffect( () => {
   
   <div>
   
-  <h1 style = {{color:'white',paddingLeft : "25px",fontSize:"36px"}}> Roster Management </h1>
+  <h1 style = {{color:'white'}}> Roster Management </h1>
     <DashboardSection>
       <RoasterTable
           rowData={roasters.roasters}
