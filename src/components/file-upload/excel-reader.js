@@ -25,9 +25,14 @@ class ExcelReader extends Component {
         }
         this.handleFile = this.handleFile.bind(this);
         this.handleChange = this.handleChange.bind(this);
-		this.addRoaster = this.addRoaster.bind(this);
+        this.addRoaster = this.addRoaster.bind(this);
+        this.notify = this.notify.bind(this);
     }
-	
+    
+    notify()
+    {
+        toast.info("Please select a file !");
+    }
 	addRoaster(data){
 		
 		axios.post('https://xlnlyl43dd.execute-api.ap-south-1.amazonaws.com/dev/addroster',data).then(resp => {
@@ -75,6 +80,7 @@ class ExcelReader extends Component {
         };
     }
     else {
+        this.notify();
        
     }
     }
@@ -84,6 +90,9 @@ class ExcelReader extends Component {
             <div >
                 <input style = {{color:"black",width:"20%",marginLeft:"60%",marginTop:"0px"}} type="file" className="form-control" id="file" accept={SheetJSFT} onChange={this.handleChange} />
                 <input style = {{marginLeft:"85%",marginTop:"-35px"}} type='submit' value="Submit" onClick={this.handleFile} />
+                <ToastContainer 
+        >
+           </ToastContainer>
             </div>
 
         )
