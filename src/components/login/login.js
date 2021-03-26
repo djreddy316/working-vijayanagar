@@ -8,7 +8,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-
+import Warning from "../../assets/warning.png"
 import "./login.css";
 import src from "../assets/JSW-logo.png";
 import { Label } from "office-ui-fabric-react";
@@ -77,17 +77,29 @@ class SignIn extends Component {
          this.setState({
         open: true,
         message: "Incorrect Username or Password!",
+        header : "Login Error"
 		}); //Need to replace with toast
 		toast('Incorrect Username or Password!')
 		//this.props.history.push("/login");
         } else {
-          localStorage.setItem("role_id", res.data.role);
-		   localStorage.setItem("user_name", res.data.username);
-          this.setState({
-            open: true,
-            message: "You have successfully Logged In!",
-          });
-          this.props.history.push("/dashboard");
+          if(res.data.block_access == true)
+          {
+            this.setState({ 
+              open: true,
+              message: "Your Application License has Expired. Please contact System Administrator!!",
+              header : "License Expired"});
+              //   console.error('There was an error!', error);
+           }
+           else{
+            localStorage.setItem("role_id", res.data.role);
+            localStorage.setItem("user_name", res.data.username);
+            this.setState({
+              open: true,
+              message: "You have successfully Logged In!",
+            });
+            this.props.history.push("/dashboard");
+           }
+          
         }
       });
   };
@@ -159,18 +171,28 @@ class SignIn extends Component {
             onClose={this.handleClose}
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
+            PaperProps={{
+              style: {
+                backgroundColor: '#111728',
+                boxShadow: 'none',
+
+              },
+            }}
+
           >
-            <DialogTitle id="alert-dialog-title">Sign In</DialogTitle>
+            <DialogTitle id="alert-dialog-title" style={{ backgroundColor: '#111728' }} ><span style={{ color: 'white' }}>{this.state.header}</span></DialogTitle>
             <DialogContent>
               <DialogContentText id="alert-dialog-description">
-                {this.state.message}
+                <img src = {Warning} width = "100px" style = {{marginLeft:"35%"}}/>
+                <p style={{ color: 'white' }}> {this.state.message}</p>
               </DialogContentText>
             </DialogContent>
             <DialogActions>
-              <Button onClick={this.handleClose} color="primary" autoFocus>
-				Okay
-			</Button>
+              <Button onClick={this.handleClose} autoFocus>
+                <span style={{ color: 'white' }}>Ok</span>
+              </Button>
             </DialogActions>
+
           </Dialog>
         </div>
       </div>
